@@ -1,0 +1,76 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body{
+  text-align:center;
+  font-family: 'Red Hat Display', sans-serif;
+}
+.whole-page{
+  background-color: hsl(225, 100%, 94%);
+}
+
+.description{
+  font-size: 16px;
+  width: 20%;
+  margin: auto auto 100px auto;
+  color: hsl(224, 23%, 55%)
+}
+
+.music-icon{
+  float: left;
+  margin-left: 300px;
+}
+.price{
+  color: hsl(224, 23%, 55%)
+}
+
+.change{
+  color:hsl(245, 75%, 52%)
+}
+
+.payment{
+  font-weight: bolder;
+  color: white;
+}
+.button {
+   -webkit-border-radius: 12px;
+   -moz-border-radius: 12px;
+   border-radius: 12px;
+   height: 18px;
+   line-height: 18px;
+   color: #FFFFFF;
+   font-family: 'Red Hat Display', sans-serif;
+   width: 414px;
+   font-size: 16px;
+   font-weight: bolder;
+   padding: 18px;
+   background-color: #6D62E5;
+   border: solid #3829E0 0;
+   text-decoration: none;
+   display: inline-block;
+   cursor: pointer;
+   text-align: center;
+}
+
+.button:hover {
+   border: solid #337FED 1px;
+   background: #3D94F6;
+   background-image: -webkit-linear-gradient(top, #3D94F6, #3829E0);
+   background-image: -moz-linear-gradient(top, #3D94F6, #3829E0);
+   background-image: -ms-linear-gradient(top, #3D94F6, #3829E0);
+   background-image: -o-linear-gradient(top, #3D94F6, #3829E0);
+   background-image: -webkit-gradient(to bottom, #3D94F6, #3829E0);
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+   text-decoration: none;
+}
+.top-section{
+
+}
