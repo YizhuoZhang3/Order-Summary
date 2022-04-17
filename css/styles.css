@@ -1,185 +1,182 @@
 :root {
-  font-size: 16px;
-  --ff-primary: "Red Hat Display", sans-serif;
-  --fw-reg: 400;
-  --fw-med: 500;
-  --fw-bold: 700;
-  --fw-black: 900;
-  --clr-primary-pale-blue: hsl(225, 100%, 94%);
-  --clr-primary-bright-blue: hsl(245, 75%, 52%);
-  --clr-primary-bright-blue-opacity: hsla(245, 75%, 52%, 35%);
-  --clr-neutral-very-pale-blue: hsl(225, 100%, 98%);
-  --clr-neutral-desaturated-blue: hsl(224, 23%, 55%);
-  --clr-neutral-desaturated-blue-opacity: hsla(224, 23%, 55%, 35%);
-  --clr-neutral-dark-blue: hsl(223, 47%, 23%);
-  --clr-active-state: hsl(245, 83%, 68%);
-  --clr-active-state-opacity: hsla(245, 83%, 68%, 35%);
-  --fs-h1: 1.375rem;
-  --fs-body: 1rem;
+  --clr-neutral-100: hsl(0 0% 100%);
+  --clr-neutral-200: hsl(225, 100%, 98%);
+  --clr-neutral-400: hsla(223, 23%, 55%, 1);
+  --clr-neutral-800: hsl(223, 47%, 23%);
+
+  --clr-primary-200: hsl(225, 100%, 94%);
+  --clr-primary-300: hsla(245, 83%, 68%, 1);
+  --clr-primary-400: hsl(245, 75%, 52%);
+
+  --fs-700: 1.75rem;
+  --fs-400: 1rem;
+  --fs-300: 0.875rem;
+
+  --fw-400: 500;
+  --fw-700: 700;
+  --fw-900: 900;
+
+  --space-1: 1rem;
+  --space-2: 1.25rem;
+
+}
+
+/* Box sizing rules */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* remove list styles on ul, ol elements with a none style */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* set core root default */
+html:focus-within{
+  scroll-behavior: smooth;
+}
+
+/* set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default */
+a:not([class]){
+  text-decoration-skip-ink: auto;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, 
+button, textarea, select{
+  font: inherit
+}
+
+@media (preders-reduced-motion: reduce) {
+  html:focus-within{
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after{
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
-  height: 100vh;
+  font-family: "Red Hat", sans-serif;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-400);
+  line-height: 1.6;
+  color: var(--clr-neutral-400);
+  background: var(--clr-primary-200);
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+h2{
+  font-size: var(--fs-700);
+  color: var(--clr-neutral-800);
+  font-weight: var(--fw-900);
+}
+
+
+
+/* conposition */
+.grid-flow {
+  display: grid;
+  gap: 1em;
+}
+
+.flex-row {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: var(--gap, 1rem);
 }
 
-html {
-  background: url("../images/pattern-background-desktop.svg");
-  background-repeat: no-repeat;
-  background-color: var(--clr-primary-pale-blue);
-  background-size: contain;
+
+/* utility */
+.padding-24 {
+  padding: 1.5rem;
+}
+.padding-48 {
+  padding: 3rem;
 }
 
-body, html {
-  padding: 0;
-  margin: 0;
-  font-family: var(--ff-primary);
-  font-size: var(--fs-body);
+.text-neutral-800 {
+  color: var(--clr-neutral-800);
 }
 
-h1 {
-  color: var(--clr-neutral-dark-blue);
-  margin-bottom: 1.875rem;
+.text-neutral-400 {
+  color: var(--clr-neutral-400);
 }
 
-.summary {
-  margin-top: -0.4rem;
-  font-weight: var(--fw-black);
-  font-size: 25px;
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
 }
 
-main {
-  margin: 0 auto;
+.bg-neutral-200 {
+  background-color: var(--clr-neutral-200);
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  background-color: hsl(0, 0%, 100%);
-  max-width: 450px;
-  border-radius: 20px;
-  margin-bottom: 1.25rem;
-  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.1));
+.text-align-left {
+  text-align: start;
 }
-
-.card-info {
+.text-align-center {
   text-align: center;
-  padding: 0 1.5rem;
-  margin-top: 2.375rem;
+}
+.text-align-right {
+  text-align: end;
 }
 
-.plan-info {
-  margin-left: 2rem;
-  width: 80%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--clr-neutral-very-pale-blue);
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
+.fw-bold{
+  font-weight: var(--fw-700);
+}
+.fw-black{
+  font-weight: var(--fw-900);
 }
 
-header {
-  border-radius: 20px 20px 0px 0px;
+.br-1 {
+  border-radius: .5rem;
+}
+
+.br-2 {
+  border-radius: 1rem;
+}
+
+/* block */
+.card{
   overflow: hidden;
-}
-
-.description {
-  margin-left: 2.5rem;
-  width: 75%;
-  color: var(--clr-neutral-desaturated-blue);
-  font-weight: var(--fw-reg);
-  margin-bottom: 1.875rem;
-  line-height: 1.5;
-  letter-spacing: 0.3px;
-}
-
-.music-icon {
-  float: left;
-  margin-left: 10px;
-}
-
-.plan-info,
-.plan-info p {
-  text-align: left;
-}
-
-.plan-info p {
-  line-height: 1.5;
-}
-
-.Annual {
-  margin-left: -2.5rem;
-  font-size: 14px;
-  color: var(--clr-neutral-dark-blue);
-  font-weight: var(--fw-bold);
-}
-
-.price {
-  margin-left: -2.5rem;
-  font-size: 14px;
-  color: var(--clr-neutral-desaturated-blue);
-  font-weight: var(--fw-reg);
-}
-
-.plan-info a {
-  text-align: right;
-}
-
-.plan {
-  margin-left: -1rem;
-}
-
-.change {
-  margin-right: 20px;
-  font-size: 12px;
-  color: var(--clr-active-state);
-  font-weight: var(--fw-bold);
-  text-decoration: none;
-}
-
-.change:hover,
-.change:focus {
-  color: var(--clr-neutral-dark-blue);
-}
-
-.btn {
-  align-items: center;
-  width: 75%;
-  border: none;
-  border-radius: 10px;
-  padding: 0.8em;
-  cursor: pointer;
-  font-weight: var(--fw-bold);
-  letter-spacing: 0.3px;
-  margin: 2rem auto auto 2rem;
-}
-
-.pay {
-  font-size: 13px;
-  color: hsl(0, 0%, 100%);
-  background-color: var(--clr-active-state);
-  filter: drop-shadow(0px 10px 10px var(--clr-primary-bright-blue-opacity));
-}
-
-.pay:hover,
-.pay:focus {
-  background-color: var(--clr-primary-bright-blue);
-  filter: drop-shadow(0px 10px 10px var(--clr-active-state-opacity));
-}
-
-.cancel {
-  text-align: center;
-  margin-bottom: 2rem;
-  margin-left: 0.8rem;
-  margin-top: 1rem;
-  background-color: hsl(0, 0%, 100%);
-  color: var(--clr-neutral-dark-blue);
-}
-
-.cancel:hover {
-  color: var(--clr-primary-bright-blue);
+  max-width: 450px;;
 }
