@@ -15,10 +15,6 @@
   --fw-400: 500;
   --fw-700: 700;
   --fw-900: 900;
-
-  --space-1: 1rem;
-  --space-2: 1.25rem;
-
 }
 
 /* Box sizing rules */
@@ -112,12 +108,10 @@ h2{
   font-weight: var(--fw-900);
 }
 
-
-
 /* conposition */
 .grid-flow {
   display: grid;
-  gap: 1em;
+  gap: var(--gap, 1rem);
 }
 
 .flex-row {
@@ -125,10 +119,14 @@ h2{
   gap: var(--gap, 1rem);
 }
 
+.plan,
+.music-img {
+  margin-top: 0.75rem;
+}
 
 /* utility */
 .padding-24 {
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 .padding-48 {
   padding: 3rem;
@@ -175,6 +173,34 @@ h2{
   border-radius: 1rem;
 }
 
+.push-right {
+  margin-left: auto;
+}
+
+a, 
+.link {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  color: var(--clr-primary-400);
+  text-decoration: underline;
+  font-weight: var(--fw-700);
+}
+
+a:hover, 
+a:focus,
+.link:hover,
+.link:focus {
+  color: var(--clr-primary-300);
+  text-decoration: none;
+}
+
+/* block */
+.card{
+  overflow: hidden;
+  max-width: 450px;
+}
+
 .button {
   color: var(--clr-neutral-100);
   font-weight: var(--fw-700);
@@ -203,10 +229,4 @@ h2{
 .button[data-type="naked"]:hover,
 .button[data-type="naked"]:focus{
   color: var(--clr-neutral-800);
-}
-
-/* block */
-.card{
-  overflow: hidden;
-  max-width: 450px;;
 }
